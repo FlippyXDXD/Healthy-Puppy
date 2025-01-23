@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Healthy_Puppy.RegistrationPage"
+             Title="Registro">
+    <StackLayout Padding="20">
+        <!-- Entradas para datos del dueño -->
+        <Label Text="Nombre del dueño" />
+        <Entry x:Name="OwnerNameEntry" Placeholder="Ingresa tu nombre" />
+
+        <Label Text="Correo electrónico" />
+        <Entry x:Name="OwnerEmailEntry" Placeholder="Ingresa tu correo electrónico" Keyboard="Email" />
+
+        <Label Text="Teléfono" />
+        <Entry x:Name="OwnerPhoneEntry" Placeholder="Ingresa tu teléfono" Keyboard="Telephone" />
+
+        <!-- Botón para registrar -->
+        <Button Text="Registrar" Clicked="OnRegisterClicked" />
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Healthy_Puppy.MainPage"
+             Title="Pantalla Principal">
+    <Grid>
+        <!-- Fondo de la pantalla -->
+        <Image Source="inicio.png" Aspect="AspectFill"/>
+
+        <!-- Botones principales -->
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+
+            <Button Text="Diagnóstico"
+                    BackgroundColor="Transparent"
+                    ImageSource="diagnostico.png"
+                    Clicked="OnDiagnosticoClicked"/>
+
+            <Button Text="Calendario"
+                    BackgroundColor="Transparent"
+                    ImageSource="calendario.png"
+                    Clicked="OnCalendarioClicked"/>
+
+            <Button Text="Control Médico"
+                    BackgroundColor="Transparent"
+                    ImageSource="controlmedico.png"
+                    Clicked="OnControlMedicoClicked"/>
+
+            <Button Text="Información del Perro"
+                    BackgroundColor="Transparent"
+                    ImageSource="infoperro.png"
+                    Clicked="OnInfoPerroClicked"/>
+
+            <Button Text="Configuración"
+                    BackgroundColor="Transparent"
+                    ImageSource="configuracion.png"
+                    Clicked="OnConfigClicked"/>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

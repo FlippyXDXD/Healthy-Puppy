@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:local="clr-namespace:Healthy_Puppy"
+       x:Class="Healthy_Puppy.AppShell">
+
+    <ShellContent Title="MainPage" ContentTemplate="{DataTemplate local:MainPage}" />
+    <ShellContent Title="DiagnosticoPage" ContentTemplate="{DataTemplate local:DiagnosticoPage}" />
+    <ShellContent Title="CalendarioPage" ContentTemplate="{DataTemplate local:CalendarioPage}" />
+    <ShellContent Title="ControlMedicoPage" ContentTemplate="{DataTemplate local:ControlMedicoPage}" />
+    <ShellContent Title="InfoPerroPage" ContentTemplate="{DataTemplate local:InfoPerroPage}" />
+    <ShellContent Title="ConfiguracionPage" ContentTemplate="{DataTemplate local:ConfiguracionPage}" />
+
+</Shell>
