@@ -2,39 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Healthy_Puppy.MainPage"
-             Title="Pantalla Principal">
-    <Grid>
-        <!-- Fondo de la pantalla -->
-        <Image Source="inicio.png" Aspect="AspectFill"/>
+             Title="Página Principal">
+    <ScrollView>
+        <StackLayout Padding="20" BackgroundColor="#A9F57F">
+            <Label Text="Bienvenido a Healthy Puppy" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,20" />
 
-        <!-- Botones principales -->
-        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            <!-- Imagen central -->
+            <Image Source="inicio.png" Aspect="AspectFit" HeightRequest="200" />
 
-            <Button Text="Diagnóstico"
-                    BackgroundColor="Transparent"
-                    ImageSource="diagnostico.png"
-                    Clicked="OnDiagnosticoClicked"/>
-
-            <Button Text="Calendario"
-                    BackgroundColor="Transparent"
-                    ImageSource="calendario.png"
-                    Clicked="OnCalendarioClicked"/>
-
-            <Button Text="Control Médico"
-                    BackgroundColor="Transparent"
-                    ImageSource="controlmedico.png"
-                    Clicked="OnControlMedicoClicked"/>
-
-            <Button Text="Información del Perro"
-                    BackgroundColor="Transparent"
-                    ImageSource="infoperro.png"
-                    Clicked="OnInfoPerroClicked"/>
-
-            <Button Text="Configuración"
-                    BackgroundColor="Transparent"
-                    ImageSource="configuracion.png"
-                    Clicked="OnConfigClicked"/>
-
-        </VerticalStackLayout>
-    </Grid>
+            <!-- Botones para las diferentes secciones -->
+            <Button Text="Registro" Clicked="OnRegisterClicked" BackgroundColor="#008CBA" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Lista de Dueños" Clicked="OnViewOwnersClicked" BackgroundColor="#008CBA" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Control Médico" Clicked="OnMedicalControlClicked" BackgroundColor="#008CBA" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Diagnóstico" Clicked="OnDiagnosisClicked" BackgroundColor="#008CBA" TextColor="White" Margin="0,10,0,0" />
+            <Button Text="Configuraciones" Clicked="OnSettingsClicked" BackgroundColor="#008CBA" TextColor="White" Margin="0,10,0,0" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

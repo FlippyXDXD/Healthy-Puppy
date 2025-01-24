@@ -1,25 +1,27 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Healthy_Puppy.Data;
+using System.IO;
 
-namespace Healthy_Puppy
+namespace Healthy_Puppy;
+
+public static class MauiProgram
 {
-    public static class MauiProgram
+    public static MauiApp CreateMauiApp()
     {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+        var builder = MauiApp.CreateBuilder();
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+        // Ruta para la base de datos
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "healthy_puppy.db");
 
-            return builder.Build();
-        }
+        // Registrar la base de datos como un servicio
+        builder.Services.AddSingleton<AppDatabase>(s => new AppDatabase(dbPath));
+
+        builder
+            .UseMauiApp<App>()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+            });
+
+        return builder.Build();
     }
 }

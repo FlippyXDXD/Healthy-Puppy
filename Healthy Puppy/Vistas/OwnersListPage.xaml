@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Healthy_Puppy.Models"
+             x:Class="Healthy_Puppy.OwnersListPage"
+             Title="Lista de Dueños">
+    <StackLayout Padding="20">
+        <Label Text="Lista de Dueños" FontSize="24" HorizontalOptions="Center" />
+        <CollectionView x:Name="OwnersCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Owner">
+                    <StackLayout Padding="10" Orientation="Vertical">
+                        <Label Text="{Binding Name}" FontSize="18" />
+                        <Label Text="{Binding Email}" FontSize="16" TextColor="Gray" />
+                        <Label Text="{Binding Phone}" FontSize="16" TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
