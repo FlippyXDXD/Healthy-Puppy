@@ -14,6 +14,10 @@ public partial class SplashPage : ContentPage
         await Task.Delay(3000);
 
         // Cambiar a la pantalla de inicio
-        Application.Current.MainPage = new NavigationPage(new InicioPage());
+        var mainWindow = Application.Current?.Windows.FirstOrDefault();
+        if (mainWindow != null)
+        {
+            mainWindow.Page = new NavigationPage(new InicioPage());
+        }
     }
 }

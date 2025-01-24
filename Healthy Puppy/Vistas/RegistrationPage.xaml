@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Healthy_Puppy.RegistrationPage"
+             Title="Registro">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <!-- Datos del dueño -->
+            <Label Text="Datos del dueño" FontSize="20" />
+            <Entry x:Name="OwnerNameEntry" Placeholder="Nombre del dueño" />
+            <Entry x:Name="OwnerEmailEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+            <Entry x:Name="OwnerPhoneEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+
+            <!-- Datos del perro -->
+            <Label Text="Datos del perro" FontSize="20" Margin="0,20,0,0" />
+            <Entry x:Name="DogNameEntry" Placeholder="Nombre del perro" />
+            <Picker x:Name="BreedPicker" Title="Selecciona la raza">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Chihuahua</x:String>
+                        <x:String>Mestizo</x:String>
+                        <x:String>Poodle</x:String>
+                        <x:String>Pastor Alemán</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                <RadioButton x:Name="MaleRadioButton" Content="Masculino" GroupName="Gender" />
+                <RadioButton x:Name="FemaleRadioButton" Content="Femenino" GroupName="Gender" />
+            </StackLayout>
+
+            <!-- Botón de registro -->
+            <Button Text="Registrar" Clicked="OnRegisterClicked" BackgroundColor="#008CBA" TextColor="White" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

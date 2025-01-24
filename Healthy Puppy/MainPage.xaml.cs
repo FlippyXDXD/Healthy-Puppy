@@ -7,28 +7,33 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnDiagnosticoClicked(object sender, EventArgs e)
+    // Navegar a la página de registro
+    private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new DiagnosticoPage());
+        await Shell.Current.GoToAsync("//RegistrationPage");
     }
 
-    private async void OnCalendarioClicked(object sender, EventArgs e)
+    // Navegar a la página de lista de dueños
+    private async void OnViewOwnersClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new CalendarioPage());
+        await Shell.Current.GoToAsync("//OwnersListPage");
     }
 
-    private async void OnControlMedicoClicked(object sender, EventArgs e)
+    // Navegar a la página de control médico (en blanco por ahora)
+    private async void OnMedicalControlClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ControlMedicoPage());
+        await Shell.Current.GoToAsync("//ControlMedicoPage");
     }
 
-    private async void OnInfoPerroClicked(object sender, EventArgs e)
+    // Navegar a la página de diagnóstico (en blanco por ahora)
+    private async void OnDiagnosisClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new InfoPerroPage());
+        await Shell.Current.GoToAsync("//DiagnosticoPage");
     }
 
-    private async void OnConfigClicked(object sender, EventArgs e)
+    // Navegar a la página de configuraciones (en blanco por ahora)
+    private async void OnSettingsClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ConfiguracionPage());
+        await Shell.Current.GoToAsync("//SettingsPage");
     }
 }
