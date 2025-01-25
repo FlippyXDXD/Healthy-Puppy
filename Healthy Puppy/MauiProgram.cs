@@ -8,19 +8,22 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+        builder.Services.AddSingleton<AppDatabase>(s =>
+        {
+            var dbPath = Path.Combine(FileSystem.AppDataDirectory, "HealthyPuppy.db");
+            var appDatabase = new AppDatabase(dbPath);
 
-        // Ruta para la base de datos
-        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "healthy_puppy.db");
+            Task.Run(async () => await appDatabase.InitializeDatabaseAsync()).ConfigureAwait(false);
 
-        // Registrar la base de datos como un servicio
-        builder.Services.AddSingleton<AppDatabase>(s => new AppDatabase(dbPath));
+            return appDatabase;
+        });
 
         builder
-            .UseMauiApp<App>()
-            .ConfigureFonts(fonts =>
-            {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-            });
+          .UseMauiApp<App>()
+          .ConfigureFonts(fonts =>
+          {
+              fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+          });
 
         return builder.Build();
     }

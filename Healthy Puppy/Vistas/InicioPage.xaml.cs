@@ -1,3 +1,5 @@
+using Healthy_Puppy.Data;
+
 namespace Healthy_Puppy;
 
 public partial class InicioPage : ContentPage
@@ -14,6 +16,7 @@ public partial class InicioPage : ContentPage
 
     private async void OnRegistrarseClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RegistrationPage());
+        var registrationPage = new RegistrationPage(App.Current.Handler.MauiContext.Services.GetService<AppDatabase>());
+        await Navigation.PushAsync(registrationPage);
     }
 }

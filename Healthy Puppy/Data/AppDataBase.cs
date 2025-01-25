@@ -12,10 +12,13 @@ namespace Healthy_Puppy.Data
         {
             // Conecta a la base de datos
             _database = new SQLiteAsyncConnection(dbPath);
+        }
 
-            // Crea las tablas si no existen
-            _database.CreateTableAsync<Owner>().Wait();
-            _database.CreateTableAsync<Dog>().Wait();
+        public async Task InitializeDatabaseAsync()
+        {
+            // Crear tablas si no existen
+            await _database.CreateTableAsync<Owner>();
+            await _database.CreateTableAsync<Dog>();
         }
 
         // ---- Operaciones CRUD para la tabla "owners" ----

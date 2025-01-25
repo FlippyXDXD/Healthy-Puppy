@@ -7,19 +7,10 @@ public partial class RegistrationPage : ContentPage
     private readonly AppDatabase _database;
 
     // Constructor
-    public RegistrationPage()
+    public RegistrationPage(AppDatabase database)
     {
         InitializeComponent();
-
-        // Inicialización de _database con manejo de servicios nulos
-        var mauiContext = App.Current?.Handler?.MauiContext;
-        if (mauiContext == null)
-        {
-            throw new InvalidOperationException("No se pudo obtener el contexto de Maui.");
-        }
-
-        _database = mauiContext.Services.GetService<AppDatabase>()
-                    ?? throw new InvalidOperationException("No se pudo obtener el servicio de AppDatabase.");
+        _database = database?? throw new ArgumentNullException(nameof(database));
     }
 
     public async void OnRegisterClicked(object sender, EventArgs e)
