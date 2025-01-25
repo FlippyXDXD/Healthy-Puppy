@@ -1,7 +1,5 @@
 using SQLite;
 using Healthy_Puppy.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Healthy_Puppy.Data
 {
