@@ -22,7 +22,7 @@ public partial class RegistrationPage : ContentPage
                     ?? throw new InvalidOperationException("No se pudo obtener el servicio de AppDatabase.");
     }
 
-    private async void OnRegisterClicked(object sender, EventArgs e)
+    public async void OnRegisterClicked(object sender, EventArgs e)
     {
         // Validación de campos vacíos
         if (string.IsNullOrWhiteSpace(OwnerNameEntry.Text) ||
