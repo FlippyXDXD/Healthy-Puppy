@@ -28,6 +28,7 @@ public partial class RegistrationPage : ContentPage
         if (string.IsNullOrWhiteSpace(OwnerNameEntry.Text) ||
             string.IsNullOrWhiteSpace(OwnerEmailEntry.Text) ||
             string.IsNullOrWhiteSpace(OwnerPhoneEntry.Text) ||
+            string.IsNullOrWhiteSpace(OwnerPasswordEntry.Text) || // Validar contraseña
             string.IsNullOrWhiteSpace(DogNameEntry.Text) ||
             BreedPicker.SelectedItem == null ||
             (!MaleRadioButton.IsChecked && !FemaleRadioButton.IsChecked))
@@ -44,8 +45,8 @@ public partial class RegistrationPage : ContentPage
             Phone = OwnerPhoneEntry.Text
         };
 
-        // Guardar dueño en la base de datos
-        await _database.SaveOwnerAsync(owner);
+        // Guardar dueño en la base de datos con la contraseña
+        await _database.SaveOwnerAsync(owner, OwnerPasswordEntry.Text);
 
         // Mostrar éxito
         await DisplayAlert("Éxito", "Registro completado con éxito.", "OK");

@@ -1,7 +1,5 @@
 using SQLite;
 using Healthy_Puppy.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Healthy_Puppy.Data
 {
@@ -16,15 +14,24 @@ namespace Healthy_Puppy.Data
             _database = new SQLiteAsyncConnection(dbPath);
 
             // Crea las tablas si no existen
-            _database.CreateTableAsync<Owner>().Wait();
-            _database.CreateTableAsync<Dog>().Wait();
+            try
+            {
+                _database.CreateTableAsync<Owner>().Wait();
+                _database.CreateTableAsync<Dog>().Wait();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones
+                throw new Exception($"Error al crear las tablas en la base de datos: {ex.Message}", ex);
+            }
         }
 
         // ---- Operaciones CRUD para la tabla "owners" ----
 
         // Guardar un nuevo dueño
-        public Task<int> SaveOwnerAsync(Owner owner)
+        public Task<int> SaveOwnerAsync(Owner owner, string password)
         {
+            owner.PasswordHash = PasswordHelper.HashPassword(password);
             return _database.InsertAsync(owner);
         }
 
@@ -44,6 +51,17 @@ namespace Healthy_Puppy.Data
         public Task<int> DeleteOwnerAsync(Owner owner)
         {
             return _database.DeleteAsync(owner);
+        }
+
+        // Verificar la contraseña de un dueño
+        public async Task<bool> VerifyOwnerPasswordAsync(int ownerId, string password)
+        {
+            var owner = await GetOwnerByIdAsync(ownerId);
+            if (owner == null)
+            {
+                return false;
+            }
+            return PasswordHelper.VerifyPassword(password, owner.PasswordHash);
         }
 
         // ---- Operaciones CRUD para la tabla "dogs" ----

@@ -11,7 +11,8 @@
 		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
-
+		<AndroidUseLegacySdkResolver>false</AndroidUseLegacySdkResolver>
+		<AndroidEnablePreloadAssemblies>false</AndroidEnablePreloadAssemblies>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>Healthy_Puppy</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -39,6 +40,11 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
+	
+	<ItemGroup>
+		<AndroidRemoveLibrary Include="lib/x86_64/libe_sqlite3.so" />
+	</ItemGroup>
+
 
 	<ItemGroup>
 		<!-- App Icon -->
@@ -58,9 +64,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.30" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.1" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.10" />
+		<PackageReference Include="SQLitePCLRaw.core" Version="2.1.10" />
 	</ItemGroup>
 
 	<ItemGroup>
