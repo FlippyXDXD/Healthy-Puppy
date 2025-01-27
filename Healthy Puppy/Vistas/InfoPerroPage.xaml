@@ -2,11 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Healthy_Puppy.InfoPerroPage"
-             Title="InfoPerroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Informacion del perro"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             Title="Sobre mi perro">
+    <ScrollView>
+            <Grid>
+                <!-- Fondo con imagen -->
+                <Image Source="sobre.png" Aspect="AspectFill" />
+
+                <!-- Contenido del texto -->
+                <Label Text="La raza Chihuahua es una de las razas de perros más pequeñas y antiguas del mundo.
+                          A continuación, se presentan las características que definen a la raza Chihuahua:
+
+                          Características físicas
+
+                          1. Tamaño: Los Chihuahuas son perros muy pequeños, con un peso promedio de 1-3 kg (2-6 libras) 
+                          y una altura promedio de 15-23 cm (6-9 pulgadas) en la cruz.
+                          2. Cabeza: La cabeza del Chihuahua es pequeña, con un cráneo redondeado y un hocico corto y ancho.
+                          3. Ojos: Los ojos del Chihuahua son grandes y redondos, con una expresión alerta y curiosa.
+                          4. Orejas: Las orejas del Chihuahua son erectas y triangulares, con una base ancha y una punta afilada.
+                          5. Cuerpo: El cuerpo del Chihuahua es pequeño y delgado, con un pecho ancho y una cola larga y fina.
+                          ....."
+                   FontSize="14"
+                   Padding="20"
+                   BackgroundColor="White"
+                   TextColor="Black" />
+
+                <!-- Botón para regresar -->
+                <Button Text="Inicio"
+                    Command="{Binding NavigateBackCommand}"
+                    BackgroundColor="Transparent"
+                    ImageSource="home.png"
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    Margin="10" />
+            </Grid>
+        </ScrollView>
+    </ContentPage>

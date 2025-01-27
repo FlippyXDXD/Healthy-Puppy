@@ -1,0 +1,33 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Healthy_Puppy.ResultadoPage"
+             Title="Resultado">
+    <Grid>
+        <!-- Fondo con imagen -->
+        <Image Source="consulta2.png" Aspect="AspectFill" />
+
+        <!-- Imagen del Chihuahua -->
+        <Image Source="chihuahua.jpg"
+               Aspect="AspectFit"
+               WidthRequest="211"
+               HeightRequest="210"
+               HorizontalOptions="Start"
+               VerticalOptions="Start" />
+
+        <!-- Etiqueta de resultados -->
+        <Label Text="Bien, normal o mal"
+               FontSize="16"
+               TextColor="Black"
+               HorizontalOptions="End"
+               VerticalOptions="Center" />
+
+        <!-- Botón de continuar -->
+        <Button ImageSource="cont.png"
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="151"
+                HeightRequest="51"
+                Command="{Binding NavigateToMainPageCommand}" />
+    </Grid>
+</ContentPage>

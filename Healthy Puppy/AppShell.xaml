@@ -5,6 +5,7 @@
         xmlns:Vistas="clr-namespace:Healthy_Puppy"
        x:Class="Healthy_Puppy.AppShell">
     <ShellContent Route="InfoPerroPage" ContentTemplate="{DataTemplate Vistas:InfoPerroPage}" />
+    <ShellContent Title="Resultado" ContentTemplate="{DataTemplate Vistas:ResultadoPage}" />
     <ShellContent Route="ControlMedicoPage" ContentTemplate="{DataTemplate Vistas:ControlMedicoPage}" />
     <ShellContent Route="DiagnosticoPage" ContentTemplate="{DataTemplate Vistas:DiagnosticoPage}" />
     <ShellContent Route="CalendarioPage" ContentTemplate="{DataTemplate Vistas:CalendarioPage}" />

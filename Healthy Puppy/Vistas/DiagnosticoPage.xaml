@@ -1,12 +1,27 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Healthy_Puppy.DiagnosticoPage"
-             Title="DiagnosticoPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Diagnóstico">
+    <Grid>
+        <!-- Fondo con imagen -->
+        <Image Source="consulta.png" Aspect="AspectFill" />
+
+        <!-- Botón para ir a resultados -->
+        <Button ImageSource="siguiente.png"
+                BackgroundColor="Transparent"
+                Command="{Binding NavigateToResultadoCommand}"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                WidthRequest="77"
+                HeightRequest="93" />
+
+        <!-- Botón para regresar al inicio -->
+        <Button ImageSource="home.png"
+                BackgroundColor="Transparent"
+                Command="{Binding NavigateBackCommand}"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                WidthRequest="61"
+                HeightRequest="61" />
+    </Grid>
 </ContentPage>

@@ -2,11 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Healthy_Puppy.CalendarioPage"
-             Title="CalendarioPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             Title="Calendario">
+    <Grid>
+            <!-- Imagen de fondo -->
+            <Image Source="calendario.png" Aspect="AspectFill" />
+
+            <!-- Botones -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="20">
+                <Button x:Name="BackButton"
+                    Text="Atrás"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="OnBackButtonClicked">
+                    <Button.ImageSource>
+                        <FileImageSource File="regreso.png" />
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="HomeButton"
+                    Text="Inicio"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="OnHomeButtonClicked">
+                    <Button.ImageSource>
+                        <FileImageSource File="home.png" />
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="NextButton"
+                    Text="Siguiente"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="OnNextButtonClicked">
+                    <Button.ImageSource>
+                        <FileImageSource File="siguiente.png" />
+                    </Button.ImageSource>
+                </Button>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage>

@@ -1,12 +1,49 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Healthy_Puppy.ControlMedicoPage"
-             Title="ControlMedicoPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Control Médico">
+    <Grid>
+        <!-- Fondo con imagen -->
+        <Image Source="control.png" Aspect="AspectFill" />
+
+        <!-- Contenido principal -->
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+
+                <!-- Imagen del perro -->
+                <Image Source="chihuahua.jpg"
+                       HeightRequest="112"
+                       WidthRequest="106"
+                       HorizontalOptions="Start" />
+
+                <!-- Nombre del perro -->
+                <Label Text="Nombre del perro"
+                       FontSize="14"
+                       TextColor="Black"
+                       HorizontalOptions="Start" />
+
+                <!-- Texto descriptivo -->
+                <Editor Text="Cuida bien a tu perro :)"
+                        FontSize="14"
+                        BackgroundColor="#44C47C"
+                        TextColor="Black"
+                        IsReadOnly="True"
+                        HeightRequest="100" />
+
+                <!-- Área de texto editable -->
+                <Editor Placeholder="Escribe algo aquí..."
+                        FontSize="14"
+                        BackgroundColor="#44C47C"
+                        TextColor="Black"
+                        HeightRequest="120" />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Botón de regreso -->
+        <Button ImageSource="home.png"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Command="{Binding NavigateBackCommand}" />
+    </Grid>
 </ContentPage>
