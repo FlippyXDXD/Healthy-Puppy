@@ -1,5 +1,3 @@
-using Healthy_Puppy.Vistas;
-
 namespace Healthy_Puppy;
 
 public partial class DiagnosticoPage : ContentPage

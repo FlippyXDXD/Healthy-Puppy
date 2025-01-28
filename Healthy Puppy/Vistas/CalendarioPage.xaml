@@ -29,12 +29,11 @@
                     </Button.ImageSource>
                 </Button>
 
-                <Button x:Name="NextButton"
+            <Button x:Name="NextButton"
                     Text="Siguiente"
                     BackgroundColor="Transparent"
-                    TextColor="Black"
-                    Clicked="OnNextButtonClicked">
-                    <Button.ImageSource>
+                    TextColor="Black">
+                <Button.ImageSource>
                         <FileImageSource File="siguiente.png" />
                     </Button.ImageSource>
                 </Button>

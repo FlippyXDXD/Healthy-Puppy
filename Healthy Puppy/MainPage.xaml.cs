@@ -6,33 +6,26 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
     }
-
-    // Navegar a la página de información del perro
-    private async void OnViewOwnersClicked(object sender, EventArgs e)
+    private async void OnInfoPerroClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//OwnersListPage");
+        await Shell.Current.GoToAsync("/InfoPerroPage");
     }
-
-    // Navegar a la página de control médico
     private async void OnMedicalControlClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//ControlMedicoPage");
     }
 
-    // Navegar a la página de diagnóstico
-    private async void OnDiagnosisClicked(object sender, EventArgs e)
+    private async void OnDiagnosticoClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//DiagnosticoPage");
     }
 
-    // Navegar a la página de calendario
-    private async void OnCalendarClicked(object sender, EventArgs e)
+    private async void OnCalendarioClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//CalendarioPage");
     }
 
-    // Navegar a la página de configuraciones
-    private async void OnSettingsClicked(object sender, EventArgs e)
+    private async void OnConfiguracionClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//ConfiguracionPage");
     }

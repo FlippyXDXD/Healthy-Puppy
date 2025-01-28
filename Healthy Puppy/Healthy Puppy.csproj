@@ -45,6 +45,9 @@
 		<AndroidRemoveLibrary Include="lib/x86_64/libe_sqlite3.so" />
 	</ItemGroup>
 
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);XCC0022</NoWarn>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<!-- App Icon -->

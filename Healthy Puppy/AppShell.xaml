@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-       xmlns:local="clr-namespace:Healthy_Puppy"
-        xmlns:Vistas="clr-namespace:Healthy_Puppy"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Healthy_Puppy"
        x:Class="Healthy_Puppy.AppShell">
-    <ShellContent Route="InfoPerroPage" ContentTemplate="{DataTemplate Vistas:InfoPerroPage}" />
-    <ShellContent Title="Resultado" ContentTemplate="{DataTemplate Vistas:ResultadoPage}" />
-    <ShellContent Route="ControlMedicoPage" ContentTemplate="{DataTemplate Vistas:ControlMedicoPage}" />
-    <ShellContent Route="DiagnosticoPage" ContentTemplate="{DataTemplate Vistas:DiagnosticoPage}" />
-    <ShellContent Route="CalendarioPage" ContentTemplate="{DataTemplate Vistas:CalendarioPage}" />
-    <ShellContent Route="ConfiguracionPage" ContentTemplate="{DataTemplate Vistas:ConfiguracionPage}" />
+
+    <ShellContent Title="Inicio" ContentTemplate="{DataTemplate views:MainPage}" Route="MainPage" />
+    <ShellContent Title="Control Médico" ContentTemplate="{DataTemplate views:ControlMedicoPage}" Route="ControlMedicoPage" />
+    <ShellContent Title="Diagnóstico" ContentTemplate="{DataTemplate views:DiagnosticoPage}" Route="DiagnosticoPage" />
+    <ShellContent Title="Calendario" ContentTemplate="{DataTemplate views:CalendarioPage}" Route="CalendarioPage" />
+    <ShellContent Title="Configuración" ContentTemplate="{DataTemplate views:ConfiguracionPage}" Route="ConfiguracionPage" />
+
 </Shell>
