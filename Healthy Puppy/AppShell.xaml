@@ -2,9 +2,10 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Healthy_Puppy"
+       xmlns:local="clr-namespace:Healthy_Puppy"
        x:Class="Healthy_Puppy.AppShell">
-
-    <ShellContent Title="Inicio" ContentTemplate="{DataTemplate views:MainPage}" Route="MainPage" />
+    <ShellContent Title="Inicio" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+    <ShellContent Title="Información del Perro" ContentTemplate="{DataTemplate views:InfoPerroPage}" Route="InfoPerroPage" />
     <ShellContent Title="Control Médico" ContentTemplate="{DataTemplate views:ControlMedicoPage}" Route="ControlMedicoPage" />
     <ShellContent Title="Diagnóstico" ContentTemplate="{DataTemplate views:DiagnosticoPage}" Route="DiagnosticoPage" />
     <ShellContent Title="Calendario" ContentTemplate="{DataTemplate views:CalendarioPage}" Route="CalendarioPage" />
